@@ -1,0 +1,80 @@
+"use client";
+
+import AnimateOnScroll from "./AnimateOnScroll";
+import { mainGame } from "@/lib/data";
+
+export default function CurrentProject() {
+  return (
+    <section id="current-project" className="relative py-24 md:py-32">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[rgba(192,57,43,0.02)] to-transparent" />
+
+      <div className="relative mx-auto max-w-5xl px-6 md:px-10">
+        <AnimateOnScroll>
+          <p className="text-xs font-medium tracking-[0.3em] uppercase text-accent">
+            Now in Development
+          </p>
+          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight md:text-5xl">
+            Our Current Game
+          </h2>
+        </AnimateOnScroll>
+
+        <div className="mt-12 grid gap-10 md:grid-cols-2 md:items-center">
+          <AnimateOnScroll delay={0.1}>
+            <div className="relative aspect-video overflow-hidden rounded-2xl border border-border bg-surface">
+              {/* Replace with actual game screenshot */}
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-surface to-[#1a0000]" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-center">
+                  <p className="font-display text-2xl font-bold md:text-3xl">
+                    {mainGame.title}
+                  </p>
+                  <p className="mt-2 text-sm text-secondary">
+                    Screenshot / Trailer Preview
+                  </p>
+                </div>
+              </div>
+            </div>
+          </AnimateOnScroll>
+
+          <AnimateOnScroll delay={0.2}>
+            <div className="space-y-6">
+              <h3 className="font-display text-2xl font-bold md:text-3xl">
+                {mainGame.title}
+              </h3>
+              <p className="leading-relaxed text-secondary">
+                {mainGame.description}
+              </p>
+              <a
+                href={mainGame.steamUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-xl bg-accent px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-accent-light hover:shadow-[0_0_30px_rgba(192,57,43,0.3)]"
+              >
+                <SteamIcon />
+                View on Steam
+              </a>
+
+              <div className="mt-6">
+                <iframe
+                  src={`https://store.steampowered.com/widget/${mainGame.steamWidgetId}/`}
+                  width="646"
+                  height="190"
+                  className="w-full rounded-lg border border-border"
+                  style={{ maxWidth: "100%" }}
+                />
+              </div>
+            </div>
+          </AnimateOnScroll>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function SteamIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.605 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.49 1.013 2.445-.397.957-1.488 1.41-2.445 1.012l.002.003-.016.007zm8.407-8.37c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.665 1.35 3.015 3.015 3.015 1.663 0 3.015-1.35 3.015-3.015zm-5.273-.005c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.253 0-2.265-1.014-2.265-2.265z" />
+    </svg>
+  );
+}

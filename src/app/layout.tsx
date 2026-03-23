@@ -1,20 +1,43 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Syne } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const syne = Syne({
+  variable: "--font-syne",
   subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
-  title: "UnseenCatStudio",
-  description: "Official website of UnseenCatStudio",
+  title: "Unseen Cat Studio — Indie Game Dev from Italy",
+  description:
+    "Unseen Cat Studio is a three-person indie game development studio from Italy, crafting atmospheric horror games and unforgettable experiences. Wishlist Bedtime Nightmare on Steam.",
+  keywords: [
+    "indie games",
+    "horror games",
+    "Bedtime Nightmare",
+    "Unseen Cat Studio",
+    "game development",
+    "Italy",
+  ],
+  openGraph: {
+    title: "Unseen Cat Studio — Indie Game Dev from Italy",
+    description:
+      "Crafting nightmares you can't look away from. Wishlist Bedtime Nightmare on Steam.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Unseen Cat Studio",
+    description: "Crafting nightmares you can't look away from.",
+  },
 };
 
 export default function RootLayout({
@@ -23,11 +46,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className={`${inter.variable} ${syne.variable} h-full antialiased`}>
+      <body className="noise-overlay min-h-full">{children}</body>
     </html>
   );
 }
