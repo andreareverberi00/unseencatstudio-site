@@ -111,7 +111,7 @@ export default function Navigation() {
                     e.preventDefault();
                     scrollTo(link.href);
                   }}
-                  className={`font-display text-4xl font-bold tracking-tight transition-colors md:text-6xl ${
+                  className={`font-display text-2xl font-bold tracking-tight transition-colors sm:text-4xl md:text-6xl ${
                     activeSection === link.href.replace("#", "")
                       ? "text-accent"
                       : "text-foreground/60 hover:text-foreground"

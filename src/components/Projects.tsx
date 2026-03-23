@@ -13,7 +13,7 @@ export default function Projects() {
           <p className="text-xs font-medium tracking-[0.3em] uppercase text-accent">
             Portfolio
           </p>
-          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight md:text-5xl">
+          <h2 className="mt-3 font-display text-2xl font-bold tracking-tight sm:text-3xl md:text-5xl">
             Past Projects
           </h2>
           <p className="mt-4 max-w-xl text-secondary">

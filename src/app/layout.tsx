@@ -47,7 +47,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${syne.variable} h-full antialiased`}>
-      <body className="noise-overlay min-h-full">{children}</body>
+      <body className="noise-overlay min-h-full overflow-x-hidden">{children}</body>
     </html>
   );
 }

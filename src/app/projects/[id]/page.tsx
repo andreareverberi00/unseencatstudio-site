@@ -59,11 +59,11 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
               </span>
             </div>
 
-            <h1 className="mt-6 font-display text-4xl font-black tracking-tight md:text-7xl">
+            <h1 className="mt-6 font-display text-2xl font-black tracking-tight sm:text-4xl md:text-7xl">
               <span style={{ color: project.color }}>{project.title}</span>
             </h1>
 
-            <p className="mt-3 font-display text-lg text-secondary md:text-xl">
+            <p className="mt-3 font-display text-base text-secondary sm:text-lg md:text-xl">
               {project.tagline}
             </p>
 

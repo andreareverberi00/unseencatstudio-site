@@ -13,7 +13,7 @@ export default function CurrentProject() {
           <p className="text-xs font-medium tracking-[0.3em] uppercase text-accent">
             Now in Development
           </p>
-          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight md:text-5xl">
+          <h2 className="mt-3 font-display text-2xl font-bold tracking-tight sm:text-3xl md:text-5xl">
             Our Current Game
           </h2>
         </AnimateOnScroll>
@@ -54,12 +54,12 @@ export default function CurrentProject() {
                 View on Steam
               </a>
 
-              <div className="mt-6">
+              <div className="mt-6 w-full overflow-hidden rounded-lg">
                 <iframe
                   src={`https://store.steampowered.com/widget/${mainGame.steamWidgetId}/`}
                   width="646"
                   height="190"
-                  className="w-full rounded-lg border border-border"
+                  className="w-full border border-border"
                   style={{ maxWidth: "100%" }}
                 />
               </div>

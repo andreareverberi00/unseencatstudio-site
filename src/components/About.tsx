@@ -14,7 +14,7 @@ export default function About() {
           <p className="text-xs font-medium tracking-[0.3em] uppercase text-accent">
             The Team
           </p>
-          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight md:text-5xl">
+          <h2 className="mt-3 font-display text-2xl font-bold tracking-tight sm:text-3xl md:text-5xl">
             About Us
           </h2>
           <p className="mt-4 max-w-xl text-secondary">

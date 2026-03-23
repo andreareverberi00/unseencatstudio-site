@@ -38,12 +38,12 @@ export default function Hero() {
         ))}
       </div>
 
-      <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
+      <div className="relative z-10 mx-auto w-full max-w-5xl px-5 text-center sm:px-6">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-4 text-xs font-medium tracking-[0.3em] uppercase text-secondary md:text-sm"
+          className="mb-4 text-[10px] font-medium tracking-[0.2em] uppercase text-secondary sm:text-xs sm:tracking-[0.3em] md:text-sm"
         >
           {siteConfig.studioName} presents
         </motion.p>
@@ -52,7 +52,8 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-display text-5xl font-black leading-none tracking-tight md:text-8xl lg:text-9xl"
+          className="font-display font-black leading-[0.95] tracking-tight"
+          style={{ fontSize: "clamp(2rem, 10vw, 9rem)" }}
         >
           <span className="bg-gradient-to-b from-white via-white to-white/40 bg-clip-text text-transparent">
             {mainGame.title}
@@ -63,7 +64,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="mx-auto mt-6 max-w-xl text-base text-secondary md:text-lg"
+          className="mx-auto mt-4 max-w-xl text-sm text-secondary sm:mt-6 sm:text-base md:text-lg"
         >
           {mainGame.subtitle}
         </motion.p>
@@ -72,32 +73,29 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.0 }}
-          className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
+          className="mt-8 flex flex-col items-center gap-4 sm:mt-10 sm:flex-row sm:justify-center"
         >
           <a
             href={mainGame.steamUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex items-center gap-2.5 rounded-xl bg-accent px-7 py-3.5 font-semibold text-white transition-all duration-300 hover:bg-accent-light hover:shadow-[0_0_30px_rgba(192,57,43,0.3)]"
+            className="group relative inline-flex items-center gap-2 rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-accent-light hover:shadow-[0_0_30px_rgba(192,57,43,0.3)] sm:gap-2.5 sm:px-7 sm:py-3.5 sm:text-base"
           >
             <SteamIcon />
             {mainGame.ctaText}
           </a>
         </motion.div>
 
-        {/* Steam widget placeholder */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.4 }}
-          className="mx-auto mt-12 max-w-[646px]"
+          className="mx-auto mt-8 w-full max-w-[646px] sm:mt-12"
         >
           <iframe
             src={`https://store.steampowered.com/widget/${mainGame.steamWidgetId}/`}
-            width="646"
-            height="190"
             className="w-full rounded-lg border border-border"
-            style={{ maxWidth: "646px" }}
+            style={{ maxWidth: "100%", height: "190px" }}
           />
         </motion.div>
       </div>

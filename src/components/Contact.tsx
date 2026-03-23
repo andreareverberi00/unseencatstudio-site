@@ -35,7 +35,7 @@ export default function Contact() {
             <p className="text-xs font-medium tracking-[0.3em] uppercase text-accent">
               Get in Touch
             </p>
-            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight md:text-5xl">
+            <h2 className="mt-3 font-display text-2xl font-bold tracking-tight sm:text-3xl md:text-5xl">
               Contact Us
             </h2>
             <p className="mt-4 text-secondary">
