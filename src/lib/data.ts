@@ -162,7 +162,7 @@ export const team: TeamMember[] = [
     initials: "DG",
   },
   {
-    name: "Alessandro Sirio",
+    name: "Alessandro Sirio Ceresa",
     role: "Social Media Manager & 2D Artist",
     bio: "Draws the worlds you explore and makes sure people actually hear about them. The bridge between pixels on screen and posts on your feed.",
     initials: "AS",

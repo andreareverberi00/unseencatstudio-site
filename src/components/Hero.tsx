@@ -38,7 +38,7 @@ export default function Hero() {
         ))}
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-5xl px-5 text-center sm:px-6">
+      <div className="flex relative z-10 mx-auto w-full max-w-5xl flex-col items-center justify-center px-5 text-center sm:px-6">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
