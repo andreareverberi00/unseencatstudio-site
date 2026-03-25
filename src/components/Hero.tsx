@@ -79,7 +79,7 @@ export default function Hero() {
             href={mainGame.steamUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex items-center gap-2 rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-accent-light hover:shadow-[0_0_30px_rgba(192,57,43,0.3)] sm:gap-2.5 sm:px-7 sm:py-3.5 sm:text-base"
+            className="pressable group relative inline-flex items-center gap-2 rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-accent-light hover:shadow-[0_0_30px_rgba(192,57,43,0.3)] sm:gap-2.5 sm:px-7 sm:py-3.5 sm:text-base"
           >
             <SteamIcon />
             {mainGame.ctaText}

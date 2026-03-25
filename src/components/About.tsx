@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import AnimateOnScroll from "./AnimateOnScroll";
 import { team, siteConfig, type TeamMember } from "@/lib/data";
@@ -42,16 +43,25 @@ function MemberCard({ member }: { member: TeamMember }) {
       {/* Avatar */}
       <div className="flex justify-center">
         <motion.div
-          whileHover={{ scale: 1.05, rotate: 3 }}
+          whileHover={{ scale: 1.16, rotate: 3 }}
           transition={{ duration: 0.4 }}
           className="relative h-24 w-24 overflow-hidden rounded-full border-2 border-border"
         >
-          {/* Replace with actual photos using next/image */}
-          <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-accent/20 to-elevated">
-            <span className="font-display text-2xl font-bold text-accent">
-              {member.initials}
-            </span>
-          </div>
+          {member.avatarImage?.src ? (
+            <Image
+              src={member.avatarImage.src}
+              alt={member.avatarImage.alt}
+              fill
+              sizes="96px"
+              className="object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+          ) : (
+            <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-accent/20 to-elevated">
+              <span className="font-display text-2xl font-bold text-accent">
+                {member.initials}
+              </span>
+            </div>
+          )}
         </motion.div>
       </div>
 

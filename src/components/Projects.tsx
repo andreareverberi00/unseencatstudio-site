@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import AnimateOnScroll from "./AnimateOnScroll";
 import { projects, type Project } from "@/lib/data";
@@ -43,10 +44,19 @@ function ProjectCard({ project }: { project: Project }) {
       >
         {/* Thumbnail */}
         <div className="relative aspect-[16/10] overflow-hidden">
+          {project.thumbnailImage.src ? (
+            <Image
+              src={project.thumbnailImage.src}
+              alt={project.thumbnailImage.alt}
+              fill
+              sizes="(max-width: 1024px) 100vw, 320px"
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+          ) : null}
           <div
             className="absolute inset-0 transition-transform duration-700 group-hover:scale-105"
             style={{
-              background: `linear-gradient(135deg, ${project.color}15, ${project.color}08, #111111)`,
+              background: `linear-gradient(135deg, ${project.color}20, ${project.color}10, #111111)`,
             }}
           />
           <div className="absolute inset-0 flex items-center justify-center">

@@ -10,7 +10,30 @@ export const siteConfig = {
   },
 };
 
-export const mainGame = {
+export interface ImageAsset {
+  src: string;
+  alt: string;
+}
+
+export interface MediaItem {
+  type: "image" | "video";
+  src: string;
+  alt: string;
+  poster?: string;
+}
+
+export interface MainGame {
+  title: string;
+  subtitle: string;
+  description: string;
+  steamUrl: string;
+  steamWidgetId: string;
+  ctaText: string;
+  thumbnailImage: ImageAsset;
+  media: MediaItem[];
+}
+
+export const mainGame: MainGame = {
   title: "Bedtime Nightmare",
   subtitle: "Complete nightly tasks and keep the lights alive. Survive what lurks in the dark.",
   description:
@@ -18,6 +41,22 @@ export const mainGame = {
   steamUrl: "https://store.steampowered.com/app/3979840/Bedtime_Nightmare/",
   steamWidgetId: "3979840",
   ctaText: "Wishlist on Steam",
+  thumbnailImage: {
+    src: "/media/placeholders/current-media.svg",
+    alt: "Bedtime Nightmare thumbnail",
+  },
+  media: [
+    {
+      type: "image",
+      src: "/media/placeholders/current-media.svg",
+      alt: "Bedroom scene with flashlight and night ambience",
+    },
+    {
+      type: "image",
+      src: "/media/placeholders/project-shot.svg",
+      alt: "Player objective UI with dark room background",
+    },
+  ],
 };
 
 export interface ProjectSection {
@@ -30,6 +69,8 @@ export interface Project {
   title: string;
   tagline: string;
   color: string;
+  thumbnailImage: ImageAsset;
+  media: MediaItem[];
   date: string;
   duration: string;
   engine: string;
@@ -46,6 +87,22 @@ export const projects: Project[] = [
     title: "Turbo Trash",
     tagline: "Sort. Fling. Save the planet.",
     color: "#2ecc71",
+    thumbnailImage: {
+      src: "/media/placeholders/project-thumb.svg",
+      alt: "Turbo Trash gameplay thumbnail",
+    },
+    media: [
+      {
+        type: "image",
+        src: "/media/placeholders/project-shot.svg",
+        alt: "Turbo Trash conveyor belt sorting gameplay",
+      },
+      {
+        type: "image",
+        src: "/media/placeholders/project-shot.svg",
+        alt: "Turbo Trash perk selection screen",
+      },
+    ],
     date: "June 2024",
     duration: "3 months",
     engine: "Unity",
@@ -73,6 +130,22 @@ export const projects: Project[] = [
     title: "Space Pizza",
     tagline: "Delivering pizza across the galaxy, one slice at a time.",
     color: "#e67e22",
+    thumbnailImage: {
+      src: "/media/placeholders/project-thumb.svg",
+      alt: "Space Pizza gameplay thumbnail",
+    },
+    media: [
+      {
+        type: "image",
+        src: "/media/placeholders/project-shot.svg",
+        alt: "Space Pizza customer order screen",
+      },
+      {
+        type: "image",
+        src: "/media/placeholders/project-shot.svg",
+        alt: "Space Pizza kitchen management gameplay",
+      },
+    ],
     date: "February 2025",
     duration: "10 days (Game Jam)",
     engine: "Unity",
@@ -109,6 +182,22 @@ export const projects: Project[] = [
     title: "Ankle Breaker",
     tagline: "Slide. Cheat. Survive the referee.",
     color: "#3498db",
+    thumbnailImage: {
+      src: "/media/placeholders/project-thumb.svg",
+      alt: "Ankle Breaker gameplay thumbnail",
+    },
+    media: [
+      {
+        type: "image",
+        src: "/media/placeholders/project-shot.svg",
+        alt: "Ankle Breaker slide tackle action scene",
+      },
+      {
+        type: "image",
+        src: "/media/placeholders/project-shot.svg",
+        alt: "Ankle Breaker referee vision cone challenge",
+      },
+    ],
     date: "January 2026",
     duration: "Jam submission (ScoreJam #37)",
     engine: "Unity",
@@ -146,6 +235,7 @@ export interface TeamMember {
   role: string;
   bio: string;
   initials: string;
+  avatarImage?: ImageAsset;
 }
 
 export const team: TeamMember[] = [
@@ -154,18 +244,30 @@ export const team: TeamMember[] = [
     role: "Game Designer",
     bio: "The one who decides how the game should feel — and then makes sure it actually does. Obsessed with player experience and the little details that make you say 'wait, that was intentional?'",
     initials: "AR",
+    avatarImage: {
+      src: "/media/placeholders/team-avatar.svg",
+      alt: "Andrea Reverberi portrait",
+    },
   },
   {
     name: "Diego Gurrieri",
     role: "Game Programmer",
     bio: "Turns ideas into playable things. If it moves, breaks, or somehow works against all odds — he probably wrote the code behind it.",
     initials: "DG",
+    avatarImage: {
+      src: "/media/placeholders/team-avatar.svg",
+      alt: "Diego Gurrieri portrait",
+    },
   },
   {
     name: "Alessandro Sirio Ceresa",
     role: "Social Media Manager & 2D Artist",
     bio: "Draws the worlds you explore and makes sure people actually hear about them. The bridge between pixels on screen and posts on your feed.",
     initials: "AS",
+    avatarImage: {
+      src: "/media/placeholders/team-avatar.svg",
+      alt: "Alessandro Sirio Ceresa portrait",
+    },
   },
 ];
 

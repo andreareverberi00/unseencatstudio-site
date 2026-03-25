@@ -166,7 +166,7 @@ function SocialLink({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="flex h-10 w-10 items-center justify-center rounded-lg border border-border text-secondary transition-all duration-300 hover:border-accent hover:text-accent"
+      className="pressable flex h-10 w-10 items-center justify-center rounded-lg border border-border text-secondary transition-all duration-300 hover:border-accent hover:text-accent"
     >
       {children}
     </a>

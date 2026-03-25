@@ -99,3 +99,27 @@ body {
 section {
   position: relative;
 }
+
+button,
+.pressable {
+  transition: transform 120ms ease, filter 160ms ease;
+}
+
+button:active,
+.pressable:active {
+  transform: scale(0.96);
+  filter: brightness(1.08);
+}
+
+button:disabled:active,
+.pressable[aria-disabled="true"]:active {
+  transform: none;
+  filter: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button,
+  .pressable {
+    transition: none;
+  }
+}
