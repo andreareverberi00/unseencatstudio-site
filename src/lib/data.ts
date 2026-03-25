@@ -255,7 +255,7 @@ export const team: TeamMember[] = [
     bio: "Turns ideas into playable things. If it moves, breaks, or somehow works against all odds — he probably wrote the code behind it.",
     initials: "DG",
     avatarImage: {
-      src: "/media/placeholders/team-avatar.svg",
+      src: "/media/Us/Diego.jpg",
       alt: "Diego Gurrieri portrait",
     },
   },
@@ -265,7 +265,7 @@ export const team: TeamMember[] = [
     bio: "Draws the worlds you explore and makes sure people actually hear about them. The bridge between pixels on screen and posts on your feed.",
     initials: "AS",
     avatarImage: {
-      src: "/media/placeholders/team-avatar.svg",
+      src: "/media/Us/Sirio.jpg",
       alt: "Alessandro Sirio Ceresa portrait",
     },
   },
