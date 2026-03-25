@@ -245,7 +245,7 @@ export const team: TeamMember[] = [
     bio: "The one who decides how the game should feel — and then makes sure it actually does. Obsessed with player experience and the little details that make you say 'wait, that was intentional?'",
     initials: "AR",
     avatarImage: {
-      src: "/media/placeholders/team-avatar.svg",
+      src: "/media/Us/Andrea.jpg",
       alt: "Andrea Reverberi portrait",
     },
   },
