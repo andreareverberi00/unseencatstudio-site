@@ -73,7 +73,7 @@ function MemberCard({ member }: { member: TeamMember }) {
       </div>
 
       <div className="mt-5 text-center">
-        <h3 className="font-display text-lg font-bold">{member.name}</h3>
+        <h3 className="font-display text-lg font-bold md:text-[25px]">{member.name}</h3>
         <p className="mt-1 text-sm font-medium text-accent">{member.role}</p>
         <p className="mt-3 text-sm leading-relaxed text-secondary">
           {member.bio}

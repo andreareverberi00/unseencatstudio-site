@@ -78,7 +78,7 @@ function ProjectCard({ project }: { project: Project }) {
         {/* Info */}
         <div className="p-5">
           <div className="flex items-center justify-between">
-            <h3 className="font-display text-lg font-bold">{project.title}</h3>
+            <h3 className="font-display text-lg font-bold md:text-[25px]">{project.title}</h3>
             <span className="text-xs text-muted">{project.date}</span>
           </div>
           <p className="mt-1.5 text-sm leading-relaxed text-secondary">

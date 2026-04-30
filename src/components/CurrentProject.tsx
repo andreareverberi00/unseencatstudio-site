@@ -22,7 +22,7 @@ export default function CurrentProject({
           <p className="text-xs font-medium tracking-[0.3em] uppercase text-accent">
             Now in Development
           </p>
-          <h2 className="mt-3 font-display text-2xl font-bold tracking-tight sm:text-3xl md:text-5xl">
+          <h2 className="mt-3 font-display text-2xl font-bold tracking-tight sm:text-3xl md:text-[55px]">
             Our Current Game
           </h2>
         </AnimateOnScroll>

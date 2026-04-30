@@ -53,7 +53,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="font-display font-black leading-[0.95] tracking-tight"
-          style={{ fontSize: "clamp(2rem, 10vw, 9rem)" }}
+          style={{ fontSize: "150px" }}
         >
           <span className="bg-gradient-to-b from-white via-white to-white/40 bg-clip-text text-transparent">
             {mainGame.title}

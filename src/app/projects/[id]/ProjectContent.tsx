@@ -23,7 +23,7 @@ export default function ProjectContent({
           transition={{ duration: 0.6 }}
           className="rounded-2xl border border-border bg-surface p-6 md:p-10"
         >
-          <h2 className="font-display text-xl font-bold md:text-2xl">Overview</h2>
+          <h2 className="font-display text-[40px] font-bold">Overview</h2>
           <p className="mt-4 leading-relaxed text-secondary">{project.overview}</p>
         </motion.div>
 
@@ -38,7 +38,7 @@ export default function ProjectContent({
               className="rounded-2xl border border-border bg-surface p-6 md:p-8"
             >
               <h3
-                className="font-display text-lg font-bold"
+                className="font-display h-[50px] text-[30px] font-bold"
                 style={{ color: project.color }}
               >
                 {section.title}
@@ -57,7 +57,7 @@ export default function ProjectContent({
             transition={{ duration: 0.6, delay: 0.35 }}
             className="mt-8 rounded-2xl border border-border bg-surface p-4 md:p-6"
           >
-            <h3 className="font-display text-lg font-bold md:text-xl">Media Gallery</h3>
+            <h3 className="font-display text-[30px] font-bold">Media Gallery</h3>
             <ProjectMediaCarousel mediaItems={galleryMedia} />
           </motion.div>
         ) : null}

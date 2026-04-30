@@ -60,7 +60,7 @@ export default function Navigation() {
               e.preventDefault();
               scrollTo("#home");
             }}
-            className="font-display text-sm font-bold tracking-widest uppercase text-foreground/80 hover:text-foreground transition-colors"
+            className="font-display inline-flex h-5 items-center text-sm font-bold tracking-widest uppercase text-foreground/80 hover:text-foreground transition-colors md:h-[30px] md:text-[25px]"
           >
             {siteConfig.studioName}
           </a>
