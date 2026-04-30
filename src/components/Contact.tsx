@@ -4,27 +4,53 @@ import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
 import AnimateOnScroll from "./AnimateOnScroll";
 import { siteConfig } from "@/lib/data";
+import { WEB3FORMS_ACCESS_KEY } from "@/lib/web3forms";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
+    setError(null);
 
-    // Connect to your preferred form service (Formspree, Web3Forms, etc.)
-    // Example with Formspree:
-    // const form = e.currentTarget;
-    // await fetch("https://formspree.io/f/YOUR_FORM_ID", {
-    //   method: "POST",
-    //   body: new FormData(form),
-    //   headers: { Accept: "application/json" },
-    // });
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const name = String(data.get("name") ?? "").trim();
+    const email = String(data.get("email") ?? "").trim();
+    const message = String(data.get("message") ?? "").trim();
 
-    await new Promise((resolve) => setTimeout(resolve, 800));
-    setSubmitted(true);
-    setLoading(false);
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          name,
+          email,
+          message,
+          subject: `Unseen Cat Studio — message from ${name}`,
+        }),
+      });
+      const payload = (await res.json()) as { success?: boolean; message?: string };
+
+      if (!res.ok || payload.success !== true) {
+        setError(
+          payload.message?.trim() ||
+            "Something went wrong. Try again or email us directly.",
+        );
+        return;
+      }
+
+      setSubmitted(true);
+      form.reset();
+    } catch {
+      setError("Network error. Check your connection or email us directly.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -135,6 +161,14 @@ export default function Contact() {
                     className="w-full resize-none rounded-xl border border-border bg-elevated px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted focus:border-accent"
                   />
                 </div>
+                {error ? (
+                  <p className="text-sm text-red-400" role="alert">
+                    {error}{" "}
+                    <a href={`mailto:${siteConfig.email}`} className="underline hover:text-foreground">
+                      {siteConfig.email}
+                    </a>
+                  </p>
+                ) : null}
                 <button
                   type="submit"
                   disabled={loading}
