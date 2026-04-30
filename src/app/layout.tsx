@@ -16,7 +16,7 @@ const amatic = Amatic_SC({
 });
 
 export const metadata: Metadata = {
-  title: "Unseen Cat Studio — Indie Game Dev from Italy",
+  title: "Unseen Cat Studio | Indie Game Studio from Italy",
   description:
     "Unseen Cat Studio is a three-person indie game development studio from Italy, crafting atmospheric horror games and unforgettable experiences. Wishlist Bedtime Nightmare on Steam.",
   keywords: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     "Italy",
   ],
   openGraph: {
-    title: "Unseen Cat Studio — Indie Game Dev from Italy",
+    title: "Unseen Cat Studio | Indie Game Studio from Italy",
     description:
       "Crafting nightmares you can't look away from. Wishlist Bedtime Nightmare on Steam.",
     type: "website",

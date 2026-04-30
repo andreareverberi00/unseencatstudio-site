@@ -15,7 +15,7 @@ export default function Projects({ projects }: { projects: Project[] }) {
             Portfolio
           </p>
           <h2 className="mt-3 font-display text-2xl font-bold tracking-tight sm:text-3xl md:text-5xl">
-            Past Projects
+            Our Games
           </h2>
           <p className="mt-4 max-w-xl text-secondary">
             A few games we&apos;ve shipped along the way. Each one taught us

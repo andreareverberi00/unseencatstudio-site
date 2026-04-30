@@ -2,11 +2,11 @@ export const siteConfig = {
   studioName: "Unseen Cat Studio",
   tagline: "Crafting nightmares you can't look away from.",
   location: "Italy",
-  email: "contact@unseencatstudio.com",
+  email: "unseencat.studio@gmail.com",
   socials: {
     twitter: "https://twitter.com/unseencatstudio",
     instagram: "https://instagram.com/unseencatstudio",
-    steam: "https://store.steampowered.com/developer/unseencatstudio",
+    steam: "https://store.steampowered.com/search/?developer=Unseen%20Cat%20Studio",
   },
 };
 
@@ -323,7 +323,7 @@ export const team: TeamMember[] = [
 export const navLinks = [
   { label: "Home", href: "#home" },
   { label: "Bedtime Nightmare", href: "#current-project" },
-  { label: "Games", href: "#projects" },
-  { label: "About", href: "#about" },
+  { label: "Our Games", href: "#projects" },
+  { label: "The Team", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];

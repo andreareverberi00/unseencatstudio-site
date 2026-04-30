@@ -16,10 +16,10 @@ export default function About() {
             The Team
           </p>
           <h2 className="mt-3 font-display text-2xl font-bold tracking-tight sm:text-3xl md:text-5xl">
-            About Us
+            The Team
           </h2>
           <p className="mt-4 max-w-xl text-secondary">
-            Three people, one shared obsession: making games that stick with you
+            Two people, one shared obsession: making games that stick with you
             long after you close them. Based in {siteConfig.location}, powered by
             passion (and way too much coffee).
           </p>
