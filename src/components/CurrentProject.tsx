@@ -3,10 +3,16 @@
 import Image from "next/image";
 import { useState } from "react";
 import AnimateOnScroll from "./AnimateOnScroll";
-import { mainGame } from "@/lib/data";
+import { mainGame, type ImageAsset, type MediaItem } from "@/lib/data";
 import MediaLightbox from "./MediaLightbox";
 
-export default function CurrentProject() {
+export default function CurrentProject({
+  carouselMedia,
+  thumbnailImage,
+}: {
+  carouselMedia: MediaItem[];
+  thumbnailImage: ImageAsset;
+}) {
   return (
     <section id="current-project" className="relative py-24 md:py-32">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[rgba(192,57,43,0.02)] to-transparent" />
@@ -23,7 +29,10 @@ export default function CurrentProject() {
 
         <div className="mt-12 grid gap-10 md:grid-cols-2 md:items-center">
           <AnimateOnScroll delay={0.1}>
-            <ProjectMediaCarousel />
+            <ProjectMediaCarousel
+              carouselMedia={carouselMedia}
+              thumbnailFallback={thumbnailImage}
+            />
           </AnimateOnScroll>
 
           <AnimateOnScroll delay={0.2}>
@@ -61,15 +70,21 @@ export default function CurrentProject() {
   );
 }
 
-function ProjectMediaCarousel() {
+function ProjectMediaCarousel({
+  carouselMedia,
+  thumbnailFallback,
+}: {
+  carouselMedia: MediaItem[];
+  thumbnailFallback: ImageAsset;
+}) {
   const mediaItems =
-    mainGame.media.length > 0
-      ? mainGame.media
+    carouselMedia.length > 0
+      ? carouselMedia
       : [
           {
             type: "image" as const,
-            src: mainGame.thumbnailImage.src,
-            alt: mainGame.thumbnailImage.alt,
+            src: thumbnailFallback.src,
+            alt: thumbnailFallback.alt,
           },
         ];
   const [activeIndex, setActiveIndex] = useState(0);

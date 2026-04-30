@@ -4,9 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import AnimateOnScroll from "./AnimateOnScroll";
-import { projects, type Project } from "@/lib/data";
+import type { Project } from "@/lib/data";
 
-export default function Projects() {
+export default function Projects({ projects }: { projects: Project[] }) {
   return (
     <section id="projects" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-5xl px-6 md:px-10">

@@ -30,6 +30,7 @@ export interface MainGame {
   steamWidgetId: string;
   ctaText: string;
   thumbnailImage: ImageAsset;
+  mediaFolder?: string;
   media: MediaItem[];
 }
 
@@ -41,6 +42,7 @@ export const mainGame: MainGame = {
   steamUrl: "https://store.steampowered.com/app/3979840/Bedtime_Nightmare/",
   steamWidgetId: "3979840",
   ctaText: "Wishlist on Steam",
+  mediaFolder: "media/BedtimeNightmare",
   thumbnailImage: {
     src: "/media/placeholders/current-media.svg",
     alt: "Bedtime Nightmare thumbnail",
@@ -70,6 +72,7 @@ export interface Project {
   tagline: string;
   color: string;
   thumbnailImage: ImageAsset;
+  mediaFolder?: string;
   media: MediaItem[];
   date: string;
   duration: string;
@@ -82,6 +85,45 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: "bedtime-nightmare",
+    title: "Bedtime Nightmare",
+    tagline:
+      "Complete nightly tasks and keep the lights alive. Survive what lurks in the dark.",
+    color: "#c0392b",
+    thumbnailImage: {
+      src: "/media/placeholders/current-media.svg",
+      alt: "Bedtime Nightmare thumbnail",
+    },
+    mediaFolder: "media/BedtimeNightmare",
+    media: [
+      {
+        type: "image",
+        src: "/media/placeholders/current-media.svg",
+        alt: "Bedroom scene with flashlight and night ambience",
+      },
+      {
+        type: "image",
+        src: "/media/placeholders/project-shot.svg",
+        alt: "Player objective UI with dark room background",
+      },
+    ],
+    date: "In development",
+    duration: "—",
+    engine: "Unreal Engine",
+    context: "First-person puzzle horror — wishlist on Steam.",
+    overview:
+      "You wake up in the middle of the night: the room is too dark, but the mess won't let you sleep. The lights keep you safe, the darkness does not… and you're not sure you're alone. Finish your task… before something finishes you.",
+    sections: [
+      {
+        title: "Experience",
+        content:
+          "Nightly tasks, light as safety, and tension that builds as you wonder what shares the room with you.",
+      },
+    ],
+    playUrl: "https://store.steampowered.com/app/3979840/Bedtime_Nightmare/",
+    playLabel: "Wishlist on Steam",
+  },
   {
     id: "turbo-trash",
     title: "Turbo Trash",
@@ -124,6 +166,7 @@ export const projects: Project[] = [
     playUrl:
       "https://play.unity.com/en/games/d76a7f3f-b0ab-4ead-97ba-a5064f6c3b3e/turbo-trash",
     playLabel: "Play on Unity Play",
+    mediaFolder: "media/TurboTrash",
   },
   {
     id: "space-pizza",
@@ -176,6 +219,7 @@ export const projects: Project[] = [
     ],
     playUrl: "https://diegogu.itch.io/space-pizza",
     playLabel: "Play on itch.io",
+    mediaFolder: "media/SpacePizza",
   },
   {
     id: "ankle-breaker",
@@ -223,6 +267,7 @@ export const projects: Project[] = [
     ],
     playUrl: "https://diegogu.itch.io/ankle-breaker",
     playLabel: "Play on itch.io",
+    mediaFolder: "media/AnkleBreaker",
   },
 ];
 
@@ -247,7 +292,7 @@ export const team: TeamMember[] = [
     initials: "AR",
     websiteUrl: "https://www.andreareverberi.com/",
     avatarImage: {
-      src: "/media/Us/Andrea.jpg",
+      src: "/media/People/Andrea.jpg",
       alt: "Andrea Reverberi portrait",
     },
   },
@@ -258,7 +303,7 @@ export const team: TeamMember[] = [
     initials: "DG",
     websiteUrl: "https://diegogurrieri.com/",
     avatarImage: {
-      src: "/media/Us/Diego.jpg",
+      src: "/media/People/Diego.jpg",
       alt: "Diego Gurrieri portrait",
     },
   },

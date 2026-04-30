@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { projects, getProjectById } from "@/lib/data";
+import { resolveGalleryMedia } from "@/lib/mediaFromFolder";
 import ProjectContent from "./ProjectContent";
 
 export function generateStaticParams() {
@@ -21,6 +22,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
   const { id } = await params;
   const project = getProjectById(id);
   if (!project) notFound();
+
+  const galleryMedia = resolveGalleryMedia(project.mediaFolder, project.media);
 
   return (
     <div className="min-h-screen">
@@ -72,7 +75,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
         </section>
 
         {/* Content */}
-        <ProjectContent project={project} />
+        <ProjectContent project={project} galleryMedia={galleryMedia} />
 
         {/* Footer */}
         <div className="border-t border-border py-12">

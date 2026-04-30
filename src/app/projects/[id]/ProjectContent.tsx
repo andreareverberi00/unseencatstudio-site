@@ -6,7 +6,13 @@ import { motion } from "framer-motion";
 import type { MediaItem, Project } from "@/lib/data";
 import MediaLightbox from "@/components/MediaLightbox";
 
-export default function ProjectContent({ project }: { project: Project }) {
+export default function ProjectContent({
+  project,
+  galleryMedia,
+}: {
+  project: Project;
+  galleryMedia: MediaItem[];
+}) {
   return (
     <section className="pb-20">
       <div className="mx-auto max-w-5xl px-6 md:px-10">
@@ -44,7 +50,7 @@ export default function ProjectContent({ project }: { project: Project }) {
           ))}
         </div>
 
-        {project.media.length > 0 ? (
+        {galleryMedia.length > 0 ? (
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -52,7 +58,7 @@ export default function ProjectContent({ project }: { project: Project }) {
             className="mt-8 rounded-2xl border border-border bg-surface p-4 md:p-6"
           >
             <h3 className="font-display text-lg font-bold md:text-xl">Media Gallery</h3>
-            <ProjectMediaCarousel mediaItems={project.media} />
+            <ProjectMediaCarousel mediaItems={galleryMedia} />
           </motion.div>
         ) : null}
 
