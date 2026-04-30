@@ -7,6 +7,10 @@ export const siteConfig = {
     twitter: "https://twitter.com/unseencatstudio",
     instagram: "https://instagram.com/unseencatstudio",
     steam: "https://store.steampowered.com/search/?developer=Unseen%20Cat%20Studio",
+    tiktok: "https://www.tiktok.com/@unseen.cat.studio",
+    bluesky: "https://bsky.app/profile/unseencatstudio.bsky.social",
+    youtube: "https://www.youtube.com/@UnseenCatStudio",
+    linkedin: "https://www.linkedin.com/company/107613411",
   },
 };
 
