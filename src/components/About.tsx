@@ -25,9 +25,13 @@ export default function About() {
           </p>
         </AnimateOnScroll>
 
-        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 flex flex-wrap justify-center gap-8">
           {team.map((member, i) => (
-            <AnimateOnScroll key={member.name} delay={i * 0.12}>
+            <AnimateOnScroll
+              key={member.name}
+              delay={i * 0.12}
+              className="w-full sm:w-72 lg:w-80"
+            >
               <MemberCard member={member} />
             </AnimateOnScroll>
           ))}
@@ -37,9 +41,12 @@ export default function About() {
   );
 }
 
+const memberCardClassName =
+  "group block rounded-2xl border border-border bg-surface p-6 transition-all duration-500 hover:border-border-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+
 function MemberCard({ member }: { member: TeamMember }) {
-  return (
-    <div className="group rounded-2xl border border-border bg-surface p-6 transition-all duration-500 hover:border-border-light">
+  const inner = (
+    <>
       {/* Avatar */}
       <div className="flex justify-center">
         <motion.div
@@ -72,6 +79,22 @@ function MemberCard({ member }: { member: TeamMember }) {
           {member.bio}
         </p>
       </div>
-    </div>
+    </>
   );
+
+  if (member.websiteUrl) {
+    return (
+      <a
+        href={member.websiteUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={memberCardClassName}
+        aria-label={`${member.name} — open portfolio (opens in new tab)`}
+      >
+        {inner}
+      </a>
+    );
+  }
+
+  return <div className={memberCardClassName}>{inner}</div>;
 }

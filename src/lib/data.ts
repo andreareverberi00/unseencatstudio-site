@@ -236,6 +236,7 @@ export interface TeamMember {
   bio: string;
   initials: string;
   avatarImage?: ImageAsset;
+  websiteUrl?: string;
 }
 
 export const team: TeamMember[] = [
@@ -244,6 +245,7 @@ export const team: TeamMember[] = [
     role: "Game Designer",
     bio: "The one who decides how the game should feel and then makes sure it actually does. Obsessed with player experience and the little details that make you say 'wait, that was intentional?'",
     initials: "AR",
+    websiteUrl: "https://www.andreareverberi.com/",
     avatarImage: {
       src: "/media/Us/Andrea.jpg",
       alt: "Andrea Reverberi portrait",
@@ -254,19 +256,10 @@ export const team: TeamMember[] = [
     role: "Game Programmer",
     bio: "Turns ideas into playable things. If it moves, breaks, or somehow works against all odds, he probably wrote the code behind it.",
     initials: "DG",
+    websiteUrl: "https://diegogurrieri.com/",
     avatarImage: {
       src: "/media/Us/Diego.jpg",
       alt: "Diego Gurrieri portrait",
-    },
-  },
-  {
-    name: "Alessandro Sirio Ceresa",
-    role: "Social Media Manager & 2D Artist",
-    bio: "Draws the worlds you explore and makes sure people actually hear about them. He is the bridge between pixels on screen and posts on your feed.",
-    initials: "AS",
-    avatarImage: {
-      src: "/media/Us/Sirio.jpg",
-      alt: "Alessandro Sirio Ceresa portrait",
     },
   },
 ];
