@@ -36,9 +36,10 @@ export interface MainGame {
 
 export const mainGame: MainGame = {
   title: "Bedtime Nightmare",
-  subtitle: "Complete nightly tasks and keep the lights alive. Survive what lurks in the dark.",
+  subtitle:
+    "First-person horror where light is your only protection. Complete simple tasks while surviving in the dark.",
   description:
-    "You wake up in the middle of the night: the room is too dark, but the mess won't let you sleep. The lights keep you safe, the darkness does not… and you're not sure you're alone. Finish your task… before something finishes you.",
+    "Bedtime Nightmare is a first-person horror game where light is your only protection. Complete simple tasks while surviving in the dark, every action drains your safety. When the lights go out, something starts moving in the shadows.",
   steamUrl: "https://store.steampowered.com/app/3979840/Bedtime_Nightmare/",
   steamWidgetId: "3979840",
   ctaText: "Wishlist on Steam",
@@ -89,7 +90,7 @@ export const projects: Project[] = [
     id: "bedtime-nightmare",
     title: "Bedtime Nightmare",
     tagline:
-      "Complete nightly tasks and keep the lights alive. Survive what lurks in the dark.",
+      "First-person horror where light is your only protection, survive the night one task at a time.",
     color: "#c0392b",
     thumbnailImage: {
       src: "/media/placeholders/current-media.svg",
@@ -109,16 +110,26 @@ export const projects: Project[] = [
       },
     ],
     date: "In development",
-    duration: "—",
+    duration: ">1 year",
     engine: "Unreal Engine",
-    context: "First-person puzzle horror — wishlist on Steam.",
+    context: "First-person psychological horror — wishlist on Steam.",
     overview:
-      "You wake up in the middle of the night: the room is too dark, but the mess won't let you sleep. The lights keep you safe, the darkness does not… and you're not sure you're alone. Finish your task… before something finishes you.",
+      "Bedtime Nightmare is a first-person horror game where light is your only protection. Complete simple tasks while surviving in the dark, every action drains your safety. Fear is grounded in childhood anxieties and compulsions: familiar spaces turn hostile when the lights go out, and something begins to move in the shadows.",
     sections: [
+      {
+        title: "Story",
+        content:
+          "You are a child left alone at night. Simple routines become survival tasks. Fear feels real, shaped by childhood anxieties and compulsions. When the lights go out, something starts moving in the dark.",
+      },
+      {
+        title: "Visuals",
+        content:
+          "The game is experienced from a low, child-height perspective, with distorted scale so ordinary objects feel imposing. Light and darkness drive gameplay: high-contrast spaces where shadow and silhouette matter as much as what you can see clearly. The look is nostalgic early-2000s domestic spaces, lived-in, familiar, and quietly wrong once night falls.",
+      },
       {
         title: "Experience",
         content:
-          "Nightly tasks, light as safety, and tension that builds as you wonder what shares the room with you.",
+          "Challenging, tense, replayable, and nostalgic. Each night asks you to balance routine with risk: finish what you must before battery runs out, and learn when to move, when to recarge, and when the dark is no longer empty.",
       },
     ],
     playUrl: "https://store.steampowered.com/app/3979840/Bedtime_Nightmare/",
@@ -160,7 +171,7 @@ export const projects: Project[] = [
       {
         title: "Visual Style",
         content:
-          "A mix of futuristic tech and cartoonish style, with a 'clean industrial' look — despite being set in a waste collection center.",
+          "A mix of futuristic tech and cartoonish style, with a 'clean industrial' look, despite being set in a waste collection center.",
       },
     ],
     playUrl:
@@ -199,7 +210,7 @@ export const projects: Project[] = [
       {
         title: "Gameplay",
         content:
-          "The game revolves around a daily work cycle where players receive orders and prepare pizzas based on customer requests. Customers make specific pizza requests with a timer for delivery — failure to deliver on time results in losing money. Players gather ingredients from a limited pool, requiring strategic management to avoid discarding essential items. Customer feedback affects earnings, where reviews can lead to penalties or bonuses based on performance.",
+          "The game revolves around a daily work cycle where players receive orders and prepare pizzas based on customer requests. Customers make specific pizza requests with a timer for delivery, failure to deliver on time results in losing money. Players gather ingredients from a limited pool, requiring strategic management to avoid discarding essential items. Customer feedback affects earnings, where reviews can lead to penalties or bonuses based on performance.",
       },
       {
         title: "Ingredients",
@@ -247,22 +258,22 @@ export const projects: Project[] = [
     engine: "Unity",
     context: "Submission to ScoreJam #37.",
     overview:
-      "Ankle Breaker is a fast-paced arcade game where winning isn't about scoring goals — it's about getting away with fouls. Slide-tackle opponents, build streaks, and rack up points… but don't get caught by the referee, whose vision and awareness increase over time. Every foul is a risk. Every power-up changes the rules. How long can you keep cheating before justice gets you?",
+      "Ankle Breaker is a fast-paced arcade game where winning isn't about scoring goals, it's about getting away with fouls. Slide-tackle opponents, build streaks, and rack up points… but don't get caught by the referee, whose vision and awareness increase over time. Every foul is a risk. Every power-up changes the rules. How long can you keep cheating before justice gets you?",
     sections: [
       {
         title: "Gameplay",
         content:
-          "Slide into opponents to score points. Chain successful fouls to increase your multiplier. Avoid the referee's cone of vision. Survive as long as possible. Choose power-ups that buff you or mess with NPCs and the referee. The referee gets stronger over time — you need to get smarter.",
+          "Slide into opponents to score points. Chain successful fouls to increase your multiplier. Avoid the referee's cone of vision. Survive as long as possible. Choose power-ups that buff you or mess with NPCs and the referee. The referee gets stronger over time, you need to get smarter.",
       },
       {
         title: "Power-Ups",
         content:
-          "Every 100 points, the game pauses and lets you choose a power-up: Big Boys Club (make NPCs bigger), Heavy Legs (reduce NPCs speed), Sugar Rush (increase player speed), Tunnel Vision (decrease referee cone angle), Short-Sighted Ref (decrease referee cone length), Slippery Business (decrease player tackle cooldown). Choose wisely — the difficulty keeps ramping up.",
+          "Every 100 points, the game pauses and lets you choose a power-up: Big Boys Club (make NPCs bigger), Heavy Legs (reduce NPCs speed), Sugar Rush (increase player speed), Tunnel Vision (decrease referee cone angle), Short-Sighted Ref (decrease referee cone length), Slippery Business (decrease player tackle cooldown). Choose wisely  the difficulty keeps ramping up.",
       },
       {
         title: "Features",
         content:
-          "Fast arcade gameplay. Score-based progression. Power-up choices mid-run. Increasing difficulty over time. Global leaderboard — compete for the highest score and prove you're the best professional fouler out there.",
+          "Fast arcade gameplay. Score-based progression. Power-up choices mid-run. Increasing difficulty over time. Global leaderboard, compete for the highest score and prove you're the best professional fouler out there.",
       },
     ],
     playUrl: "https://diegogu.itch.io/ankle-breaker",
