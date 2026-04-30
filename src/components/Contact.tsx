@@ -6,6 +6,11 @@ import AnimateOnScroll from "./AnimateOnScroll";
 import { siteConfig } from "@/lib/data";
 import { WEB3FORMS_ACCESS_KEY } from "@/lib/web3forms";
 
+const MAX_NAME_LENGTH = 80;
+const MAX_EMAIL_LENGTH = 254;
+const MAX_MESSAGE_LENGTH = 2000;
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -21,6 +26,31 @@ export default function Contact() {
     const name = String(data.get("name") ?? "").trim();
     const email = String(data.get("email") ?? "").trim();
     const message = String(data.get("message") ?? "").trim();
+    const botcheck = String(data.get("botcheck") ?? "");
+
+    if (!WEB3FORMS_ACCESS_KEY) {
+      setError("Contact form is not configured. Please email us directly.");
+      setLoading(false);
+      return;
+    }
+
+    if (botcheck) {
+      setLoading(false);
+      return;
+    }
+
+    if (
+      name.length < 2 ||
+      name.length > MAX_NAME_LENGTH ||
+      email.length > MAX_EMAIL_LENGTH ||
+      !EMAIL_PATTERN.test(email) ||
+      message.length < 10 ||
+      message.length > MAX_MESSAGE_LENGTH
+    ) {
+      setError("Please check your details and keep the message concise.");
+      setLoading(false);
+      return;
+    }
 
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
@@ -31,7 +61,8 @@ export default function Contact() {
           name,
           email,
           message,
-          subject: `Unseen Cat Studio — message from ${name}`,
+          botcheck,
+          subject: `Unseen Cat Studio - message from ${name}`,
         }),
       });
       const payload = (await res.json()) as { success?: boolean; message?: string };
@@ -131,6 +162,9 @@ export default function Contact() {
                     name="name"
                     type="text"
                     required
+                    minLength={2}
+                    maxLength={MAX_NAME_LENGTH}
+                    autoComplete="name"
                     placeholder="Your name"
                     className="w-full rounded-xl border border-border bg-elevated px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted focus:border-accent"
                   />
@@ -144,10 +178,20 @@ export default function Contact() {
                     name="email"
                     type="email"
                     required
+                    maxLength={MAX_EMAIL_LENGTH}
+                    autoComplete="email"
                     placeholder="you@example.com"
                     className="w-full rounded-xl border border-border bg-elevated px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted focus:border-accent"
                   />
                 </div>
+                <input
+                  type="checkbox"
+                  name="botcheck"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  className="hidden"
+                  aria-hidden="true"
+                />
                 <div>
                   <label htmlFor="message" className="mb-1.5 block text-sm font-medium">
                     Message
@@ -156,6 +200,8 @@ export default function Contact() {
                     id="message"
                     name="message"
                     required
+                    minLength={10}
+                    maxLength={MAX_MESSAGE_LENGTH}
                     rows={5}
                     placeholder="What's on your mind?"
                     className="w-full resize-none rounded-xl border border-border bg-elevated px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted focus:border-accent"
