@@ -3,6 +3,24 @@
 import { motion } from "framer-motion";
 import { mainGame, siteConfig } from "@/lib/data";
 
+function HeroTitle({ title }: { title: string }) {
+  const parts = title.trim().split(/\s+/);
+  const head = parts[0] ?? title;
+  const tail = parts.slice(1).join(" ");
+
+  if (!tail) {
+    return <>{title}</>;
+  }
+
+  return (
+    <>
+      <span className="block sm:inline">{head}</span>
+      <span className="hidden sm:inline"> </span>
+      <span className="block sm:inline">{tail}</span>
+    </>
+  );
+}
+
 export default function Hero() {
   return (
     <section
@@ -52,10 +70,10 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-display mx-auto w-full max-w-full px-1 text-balance font-black leading-[0.92] tracking-tight text-[clamp(2.25rem,5.5vw+1.35rem,9.375rem)] sm:px-2 sm:leading-[0.95] md:text-[clamp(3.25rem,10vw+1rem,9.375rem)]"
+          className="font-display mx-auto w-full max-w-full px-1 text-balance font-black leading-[0.95] tracking-tight text-[clamp(2.35rem,5.5vw+1.4rem,9.375rem)] max-sm:px-0 max-sm:leading-[0.82] max-sm:tracking-tighter max-sm:text-[clamp(6rem,22vw+1.25rem,9.375rem)] sm:px-2 md:text-[clamp(3.25rem,10vw+1rem,9.375rem)]"
         >
           <span className="inline-block max-w-full bg-gradient-to-b from-white via-white to-white/40 bg-clip-text text-transparent">
-            {mainGame.title}
+            <HeroTitle title={mainGame.title} />
           </span>
         </motion.h1>
 
@@ -99,12 +117,12 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator — z above Steam embed; on mobile sit slightly lower so it clears the widget */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="pointer-events-none absolute bottom-8 left-1/2 z-20 -translate-x-1/2 max-sm:bottom-3"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}

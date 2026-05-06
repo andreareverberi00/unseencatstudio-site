@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Amatic_SC, Inter } from "next/font/google";
+import DesktopCornerCats from "@/components/DesktopCornerCats";
 import "./globals.css";
 
 const inter = Inter({
@@ -53,7 +54,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${amatic.variable} h-full antialiased`}>
-      <body className="noise-overlay min-h-full overflow-x-hidden">{children}</body>
+      <body className="noise-overlay min-h-full overflow-x-hidden">
+        {children}
+        <DesktopCornerCats />
+      </body>
     </html>
   );
 }
