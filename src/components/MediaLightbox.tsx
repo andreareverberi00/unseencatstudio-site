@@ -37,28 +37,36 @@ export default function MediaLightbox({
   }, [onClose, onNext, onPrevious]);
 
   return (
-    <div className="fixed inset-0 z-[100] bg-black/95 p-3 md:p-6">
-      <button
-        type="button"
-        onClick={onClose}
-        className="absolute right-4 top-4 rounded-full border border-white/30 bg-black/45 px-3 py-1.5 text-sm text-white transition-colors hover:border-white/50 hover:bg-white/20"
-        aria-label="Close fullscreen gallery"
-      >
-        Close
-      </button>
+    <div
+      className="fixed inset-0 z-[10050] flex flex-col bg-black/95 pt-[env(safe-area-inset-top,0px)] pb-[env(safe-area-inset-bottom,0px)]"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Fullscreen gallery"
+    >
+      <div className="flex shrink-0 justify-end px-3 pt-2 md:px-6 md:pt-3">
+        <button
+          type="button"
+          onClick={onClose}
+          className="flex min-h-11 min-w-11 touch-manipulation items-center justify-center rounded-full border border-white/35 bg-black/60 text-white transition-colors hover:border-white/55 hover:bg-white/15 active:bg-white/25"
+          aria-label="Close fullscreen gallery"
+        >
+          <CloseIcon />
+        </button>
+      </div>
 
-      <div className="relative mx-auto flex h-full w-full max-w-6xl items-center justify-center">
+      <div className="relative mx-auto flex min-h-0 w-full max-w-6xl flex-1 items-center justify-center px-3 pb-3 md:px-6 md:pb-6">
         {activeItem.type === "video" ? (
           <video
             key={activeItem.src}
             src={activeItem.src}
             poster={activeItem.poster}
             controls
+            playsInline
             autoPlay
             className="max-h-full w-full rounded-lg border border-white/20 bg-black object-contain"
           />
         ) : (
-          <div className="relative h-full w-full">
+          <div className="relative h-full w-full min-h-0">
             <Image
               src={activeItem.src}
               alt={activeItem.alt}
@@ -73,7 +81,7 @@ export default function MediaLightbox({
         <button
           type="button"
           onClick={onPrevious}
-          className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full border border-white/30 bg-black/45 p-3 text-white transition-colors hover:border-white/50 hover:bg-white/20 md:left-4"
+          className="absolute left-1 top-1/2 z-20 flex min-h-11 min-w-11 -translate-y-1/2 touch-manipulation items-center justify-center rounded-full border border-white/35 bg-black/60 text-white transition-colors hover:border-white/55 hover:bg-white/15 active:bg-white/25 md:left-3"
           aria-label="Previous media"
         >
           <ArrowLeftIcon />
@@ -81,13 +89,29 @@ export default function MediaLightbox({
         <button
           type="button"
           onClick={onNext}
-          className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full border border-white/30 bg-black/45 p-3 text-white transition-colors hover:border-white/50 hover:bg-white/20 md:right-4"
+          className="absolute right-1 top-1/2 z-20 flex min-h-11 min-w-11 -translate-y-1/2 touch-manipulation items-center justify-center rounded-full border border-white/35 bg-black/60 text-white transition-colors hover:border-white/55 hover:bg-white/15 active:bg-white/25 md:right-3"
           aria-label="Next media"
         >
           <ArrowRightIcon />
         </button>
       </div>
     </div>
+  );
+}
+
+function CloseIcon() {
+  return (
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      aria-hidden
+    >
+      <path d="M18 6 6 18M6 6l12 12" />
+    </svg>
   );
 }
 

@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden"
+      className="relative flex min-h-[100dvh] flex-col items-center justify-center overflow-x-clip"
     >
       {/* Atmospheric background */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0d0000] via-[#0a0a0a] to-[#0a0a0a]" />
@@ -38,12 +38,12 @@ export default function Hero() {
         ))}
       </div>
 
-      <div className="flex relative z-10 mx-auto w-full max-w-5xl flex-col items-center justify-center px-5 text-center sm:px-6">
+      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center justify-center px-4 pb-8 text-center sm:px-6 md:px-6 max-lg:pt-[calc(env(safe-area-inset-top,0px)+5.25rem)]">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-4 text-[10px] font-medium tracking-[0.2em] uppercase text-secondary sm:text-xs sm:tracking-[0.3em] md:text-sm"
+          className="mb-4 max-w-full text-[10px] font-medium tracking-[0.2em] uppercase text-secondary sm:text-xs sm:tracking-[0.3em] md:text-sm"
         >
           {siteConfig.studioName} presents
         </motion.p>
@@ -52,10 +52,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-display font-black leading-[0.95] tracking-tight"
-          style={{ fontSize: "150px" }}
+          className="font-display mx-auto w-full max-w-full px-1 text-balance font-black leading-[0.92] tracking-tight text-[clamp(2.25rem,5.5vw+1.35rem,9.375rem)] sm:px-2 sm:leading-[0.95] md:text-[clamp(3.25rem,10vw+1rem,9.375rem)]"
         >
-          <span className="bg-gradient-to-b from-white via-white to-white/40 bg-clip-text text-transparent">
+          <span className="inline-block max-w-full bg-gradient-to-b from-white via-white to-white/40 bg-clip-text text-transparent">
             {mainGame.title}
           </span>
         </motion.h1>

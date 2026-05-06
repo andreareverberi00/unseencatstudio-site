@@ -129,7 +129,7 @@ function ProjectMediaCarousel({
         <button
           type="button"
           onClick={showPrevious}
-          className="absolute left-3 top-1/2 z-20 -translate-y-1/2 rounded-full border border-border bg-black/55 p-2 text-white transition-colors hover:border-white/40 hover:bg-white/20"
+          className="absolute left-2 top-1/2 z-20 flex min-h-11 min-w-11 -translate-y-1/2 touch-manipulation items-center justify-center rounded-full border border-border bg-black/55 text-white transition-colors hover:border-white/40 hover:bg-white/20 md:left-3"
           aria-label="Previous media"
         >
           <ArrowLeftIcon />
@@ -137,7 +137,7 @@ function ProjectMediaCarousel({
         <button
           type="button"
           onClick={showNext}
-          className="absolute right-3 top-1/2 z-20 -translate-y-1/2 rounded-full border border-border bg-black/55 p-2 text-white transition-colors hover:border-white/40 hover:bg-white/20"
+          className="absolute right-2 top-1/2 z-20 flex min-h-11 min-w-11 -translate-y-1/2 touch-manipulation items-center justify-center rounded-full border border-border bg-black/55 text-white transition-colors hover:border-white/40 hover:bg-white/20 md:right-3"
           aria-label="Next media"
         >
           <ArrowRightIcon />

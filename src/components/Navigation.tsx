@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { navLinks, siteConfig } from "@/lib/data";
 
@@ -60,9 +61,17 @@ export default function Navigation() {
               e.preventDefault();
               scrollTo("#home");
             }}
-            className="font-display inline-flex h-5 items-center text-sm font-bold tracking-widest uppercase text-foreground/80 hover:text-foreground transition-colors md:h-[30px] md:text-[25px]"
+            className="font-display inline-flex h-5 items-center gap-2 text-sm font-bold tracking-widest uppercase text-foreground/80 transition-colors hover:text-foreground md:h-[30px] md:gap-3 md:text-[25px]"
           >
-            {siteConfig.studioName}
+            <Image
+              src="/images/brand/logoCut.png"
+              alt=""
+              width={160}
+              height={160}
+              className="h-5 w-auto shrink-0 object-contain object-left md:h-[30px]"
+              priority
+            />
+            <span className="leading-none">{siteConfig.studioName}</span>
           </a>
 
           <button

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Amatic_SC, Inter } from "next/font/google";
 import "./globals.css";
 
@@ -14,6 +14,12 @@ const amatic = Amatic_SC({
   display: "swap",
   weight: ["400", "700"],
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
 
 export const metadata: Metadata = {
   title: "Unseen Cat Studio | Indie Game Studio from Italy",

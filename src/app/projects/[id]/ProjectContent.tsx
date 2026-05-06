@@ -117,7 +117,7 @@ function ProjectMediaCarousel({ mediaItems }: { mediaItems: MediaItem[] }) {
           <button
             type="button"
             onClick={() => scrollByCard("left")}
-            className="rounded-full border border-border bg-elevated p-2 text-secondary transition-colors hover:border-border-light hover:bg-white/10 hover:text-foreground"
+            className="flex min-h-11 min-w-11 touch-manipulation items-center justify-center rounded-full border border-border bg-elevated text-secondary transition-colors hover:border-border-light hover:bg-white/10 hover:text-foreground"
             aria-label="Scroll gallery left"
           >
             <ArrowLeftIcon />
@@ -125,7 +125,7 @@ function ProjectMediaCarousel({ mediaItems }: { mediaItems: MediaItem[] }) {
           <button
             type="button"
             onClick={() => scrollByCard("right")}
-            className="rounded-full border border-border bg-elevated p-2 text-secondary transition-colors hover:border-border-light hover:bg-white/10 hover:text-foreground"
+            className="flex min-h-11 min-w-11 touch-manipulation items-center justify-center rounded-full border border-border bg-elevated text-secondary transition-colors hover:border-border-light hover:bg-white/10 hover:text-foreground"
             aria-label="Scroll gallery right"
           >
             <ArrowRightIcon />
