@@ -24,6 +24,10 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: "Unseen Cat Studio | Indie Game Studio from Italy",
+  icons: {
+    icon: [{ url: "/images/brand/logoCut.png", type: "image/png" }],
+    apple: [{ url: "/images/brand/logoCut.png", type: "image/png" }],
+  },
   description:
     "Unseen Cat Studio is a three-person indie game development studio from Italy, crafting atmospheric horror games and unforgettable experiences. Wishlist Bedtime Nightmare on Steam.",
   keywords: [
