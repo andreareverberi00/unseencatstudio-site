@@ -43,7 +43,7 @@ export const mainGame: MainGame = {
   subtitle:
     "First-person horror where light is your only protection. Complete simple tasks while surviving in the dark.",
   description:
-    "Bedtime Nightmare is a first-person horror game where light is your only protection. Complete simple tasks while surviving in the dark, every action drains your safety. When the lights go out, something starts moving in the shadows.",
+    "Bedtime Nightmare is a first-person horror game where light is your only protection. Complete simple tasks while surviving in the dark, every action drains your safety. When the lights go out, something starts moving in the dark.",
   steamUrl: "https://store.steampowered.com/app/3979840/Bedtime_Nightmare/",
   steamWidgetId: "3979840",
   ctaText: "Wishlist on Steam",
@@ -118,7 +118,7 @@ export const projects: Project[] = [
     engine: "Unreal Engine",
     context: "First-person psychological horror — wishlist on Steam.",
     overview:
-      "Bedtime Nightmare is a first-person horror game where light is your only protection. Complete simple tasks while surviving in the dark, every action drains your safety. Fear is grounded in childhood anxieties and compulsions: familiar spaces turn hostile when the lights go out, and something begins to move in the shadows.",
+      "Bedtime Nightmare is a first-person horror game where light is your only protection. Complete simple tasks while surviving in the dark, every action drains your safety. Fear is grounded in childhood anxieties and compulsions: familiar spaces turn hostile when the lights go out, and something begins to move in the dark.",
     sections: [
       {
         title: "Story",
